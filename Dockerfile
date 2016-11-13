@@ -103,3 +103,9 @@ COPY ./patches/etc/vsftpd.conf /etc/vsftpd.conf
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
+
+
+COPY ./docker-entrypoint.sh /root/docker-entrypoint.sh
+RUN chmod +x /root/docker-entrypoint.sh
+
+CMD ["/root/docker-entrypoint.sh"]
