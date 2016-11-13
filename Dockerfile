@@ -123,3 +123,10 @@ COPY ./overlay/etc/php5/fpm/conf.d/50-scaleway.ini /etc/php5/fpm/conf.d/50-scale
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/scw-builder-leave
+
+COPY ./docker-entrypoint.sh /root/docker-entrypoint.sh
+RUN chmod +x /root/docker-entrypoint.sh
+
+CMD ["/root/docker-entrypoint.sh"]
+
+
